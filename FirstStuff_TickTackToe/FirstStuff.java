@@ -18,9 +18,20 @@ public class FirstStuff {
     private JButton button9;
     private JTextArea textArea1;
     boolean X = true;
-
+    private JButton[][] buttonArray = new JButton[3][3];
 
     public FirstStuff() {
+
+        buttonArray[0][0] = button1;
+        buttonArray[0][1] = button2;
+        buttonArray[0][2] = button3;
+        buttonArray[1][0] = button4;
+        buttonArray[1][1] = button5;
+        buttonArray[1][2] = button6;
+        buttonArray[2][0] = button7;
+        buttonArray[2][1] = button8;
+        buttonArray[2][2] = button9;
+
         textArea1.setText("TICK TACK TOE!");
 
         button1.addActionListener(new ActionListener() {
@@ -35,6 +46,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button1.setEnabled(false);
             }
         });
 
@@ -50,6 +62,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button2.setEnabled(false);
             }
         });
 
@@ -65,6 +78,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button3.setEnabled(false);
             }
         });
 
@@ -80,22 +94,21 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button4.setEnabled(false);
             }
         });
 
-        button5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(X){
-                    button5.setText("X");
-                    X = false;
-                    textArea1.setText("Guter Zug X!");
-                }else{
-                    button5.setText("O");
-                    X = true;
-                    textArea1.setText("Guter Zug O!");
-                }
+        button5.addActionListener(e -> {
+            if(X){
+                button5.setText("X");
+                X = false;
+                textArea1.setText("Guter Zug X!");
+            }else{
+                button5.setText("O");
+                X = true;
+                textArea1.setText("Guter Zug O!");
             }
+            button5.setEnabled(false);
         });
 
         button6.addActionListener(new ActionListener() {
@@ -110,6 +123,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button6.setEnabled(false);
             }
         });
 
@@ -125,6 +139,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button7.setEnabled(false);
             }
         });
 
@@ -140,6 +155,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button8.setEnabled(false);
             }
         });
 
@@ -155,6 +171,7 @@ public class FirstStuff {
                     X = true;
                     textArea1.setText("Guter Zug O!");
                 }
+                button9.setEnabled(false);
             }
         });
 
@@ -168,4 +185,7 @@ public class FirstStuff {
         frame.setVisible(true);
     }
 
+    public void winner() {
+
+    }
 }
